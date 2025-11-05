@@ -8,26 +8,21 @@
 
     <style>
         :root {
-            --primary-dark-purple: #340083;
-            --primary-medium-purple: #482183;
-            --primary-light-purple: #583890;
-            --primary-lavender: #6D4D9C;
-            --primary-pale-lavender: #817AB5;
-            --primary-lightest-lavender: #EFE7F7;
+            --primary-dark-purple: #4A148C;
+            --primary-medium-purple: #6A1B9A;
+            --primary-light-purple: #7B1FA2;
+            --primary-lavender: #9C27B0;
+            --primary-lightest-lavender: #F3E5F5;
 
-            --secondary-dark-teal: #000081;
-            --secondary-medium-teal: #008DC1;
-            --secondary-light-teal: #33CDD1;
-            --secondary-pale-teal: #6EBD80;
-            --secondary-lightest-teal: #99E6E0;
-            --secondary-aquamarine: #B3E0E8;
+            --secondary-dark-teal: #00838F;
+            --secondary-medium-teal: #00BCD4;
+            --secondary-aquamarine: #84FFFF;
 
-            --shade-darkest: #1D122E;
-            --shade-dark: #231D2E;
-            --shade-medium-dark: #383340;
-            --shade-medium: #777380;
-            --shade-light: #C5C2CC;
-            --shade-lightest: #E8E4EB;
+            --shade-dark: #1E1E2C;
+            --shade-medium-dark: #37474F;
+            --shade-medium: #78909C;
+            --shade-light: #ECEFF1;
+            --shade-lightest: #F9F9F9;
 
             --text-body: var(--shade-medium-dark);
             --text-header: var(--primary-dark-purple);
@@ -41,306 +36,288 @@
         }
 
         body {
+            background: var(--shade-lightest);
+            background-image: linear-gradient(180deg,
+                    var(--primary-lavender) 0%,
+                    var(--shade-lightest) 600px
+                );
+
+            background-repeat: no-repeat;
+            background-size: 100% 600px;
             font-family: 'Karla', sans-serif;
-            background: var(--shade-lightest); 
             color: var(--text-body);
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         header {
-            padding: 60px 0 40px;
+            padding: 80px 0 60px;
             text-align: center;
+            background: transparent;
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             margin: 0 auto 20px;
             background: var(--primary-dark-purple);
             color: var(--text-light);
-            border-radius: 20px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            animation: float 3s ease-in-out infinite;
+            font-size: 36px;
+            box-shadow: 0 8px 20px rgba(74, 20, 140, 0.4);
+            animation: float 4s ease-in-out infinite;
         }
 
         @keyframes float {
+
             0%,
             100% {
                 transform: translateY(0px);
             }
 
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-8px);
             }
         }
 
         h1 {
             font-family: 'Rubik', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700; 
-            margin-bottom: 20px;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
             color: var(--text-header);
+            letter-spacing: -1px;
         }
 
         .subtitle {
             font-family: 'Karla', sans-serif;
-            font-size: 1.3rem;
-            color: var(--shade-medium); 
+            font-size: 1.4rem;
+            color: var(--shade-medium);
             font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 16px 40px;
-            font-size: 1.1rem;
+            padding: 14px 35px;
+            font-size: 1.05rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 9999px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            font-family: 'Rubik', sans-serif; 
-            font-weight: 500;
-            border: 2px solid transparent; 
+            font-family: 'Rubik', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
         }
 
         .btn-primary {
-           
-            background: var(--primary-dark-purple);
+            background: linear-gradient(90deg, var(--primary-dark-purple) 0%, var(--primary-medium-purple) 100%);
             color: var(--text-light);
-            box-shadow: 0 4px 12px rgba(52, 0, 131, 0.2);
+            box-shadow: 0 8px 20px rgba(74, 20, 140, 0.3);
         }
 
         .btn-primary:hover {
-            background: var(--primary-medium-purple);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(52, 0, 131, 0.3);
+            background: linear-gradient(90deg, var(--primary-medium-purple) 0%, var(--primary-dark-purple) 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(74, 20, 140, 0.4);
         }
 
         .btn-secondary {
-            
-            background: transparent;
+            background: var(--text-light);
             color: var(--primary-dark-purple);
             border: 2px solid var(--primary-dark-purple);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .btn-secondary:hover {
-            background: var(--primary-lightest-lavender); 
-            transform: translateY(-3px);
+            background: var(--primary-lightest-lavender);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .features {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
-        .features-grid {
+        .features-grid,
+        .preview-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 60px;
         }
 
         .feature-card,
         .preview-card,
-        .preview-container,
         .stat-card {
-            background: #fff; 
-            backdrop-filter: none; 
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid var(--shade-light); 
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(236, 239, 241, 0.7);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.03);
         }
 
         .feature-card:hover,
         .preview-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.05);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary-dark-purple); 
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark-purple);
         }
 
         .feature-card h3 {
             font-family: 'Rubik', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
             color: var(--text-header);
-        }
-
-        .feature-card p {
-            color: var(--text-body);
-            line-height: 1.6;
-            opacity: 1; 
-        }
-
-        .preview-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .preview-section h2 {
-            font-family: 'Rubik', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--text-header);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 20px;
         }
 
         .stat-number {
             font-family: 'Rubik', sans-serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--primary-dark-purple); 
+            margin-bottom: 5px;
+            color: var(--secondary-dark-teal);
         }
 
         .stat-label {
             font-family: 'Karla', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--shade-medium);
         }
 
-        footer {
-            padding: 60px 0 40px;
-            text-align: center;
-            border-top: 1px solid var(--shade-light); 
-            margin-top: 80px;
+        .preview-section h2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: var(--text-header);
+            font-weight: 700;
         }
 
-        .footer-links {
+        .preview-image {
+            background: var(--shade-lightest);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid var(--shade-light);
+        }
+
+        .preview-card {
+            padding: 20px;
+        }
+
+        .preview-image {
+            height: 250px;
             display: flex;
-            gap: 30px;
             justify-content: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            align-items: center;
+            padding: 10px;
+            background: var(--shade-lightest);
+            border-radius: 10px;
+        }
+
+        .preview-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid var(--shade-light);
+            margin-top: 60px;
         }
 
         .footer-links a {
-            color: var(--primary-medium-purple); 
+            color: var(--primary-dark-purple);
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 700;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--primary-dark-purple);
+            color: var(--primary-medium-purple);
         }
 
         .github-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            color: var(--text-body); 
+            color: var(--shade-medium-dark);
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         .github-link:hover {
             color: var(--primary-dark-purple);
         }
 
-        .github-link svg {
-            fill: currentColor;
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-top: 60px;
         }
 
-        footer p {
-            color: var(--shade-medium);
+        @media (min-width: 768px) {
+
+            .features-grid,
+            .preview-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            .preview-grid {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+                font-size: 3rem;
             }
 
             .btn {
-                width: 100%;
-                max-width: 300px;
+                width: auto;
             }
         }
-
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .preview-card h3 {
-            font-family: 'Rubik', sans-serif;
-            color: var(--text-header);
-            margin-bottom: 15px;
-        }
-
-        .preview-image {
-            background: #fff; 
-            border-radius: 10px;
-            padding: 10px;
-        }
-        
-        .preview-card {
-            padding: 20px; 
-            overflow: hidden;
-        }
-
-        .preview-image {
-            height: 250px; 
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-            padding: 10px;
-            background: var(--shade-lightest); 
-            border-radius: 10px;
-        }
-
-        .preview-image img {
-            max-width: 100%; 
-            max-height: 100%;
-            object-fit: contain; 
-        }
-
     </style>
 </head>
 
@@ -348,240 +325,243 @@
     <div class="container">
         <header>
             <div class="logo">✨</div>
-            <h1>High-Fidelity UI/UX Components Library</h1>
-            <p class="subtitle">
-                A collection of **17 high-fidelity prefabs** for web application
-                diagrams and user flows.
-            </p>
+            <h1>Auth 16 UI Kit</h1>
+            <p class="subtitle" style="color: var(--primary-medium-purple); font-weight: 500; opacity: 0.9;">
+    A collection of **16 high-fidelity prefabs** for web application and user flows.
+</p>
 
             <div class="cta-buttons">
-                <a href="https://excalidraw.com/?addLibrary=https%3A%2F%2Fraw.githubusercontent.com%2Fexcalidraw%2Fexcalidraw-libraries%2Fjosejimenez-m-high-fidelity-ui-ux-components-1761767542432%2Flibraries%2Fjosejimenez-m%2Fhigh-fidelity-ui-ux-components.excalidrawlib%3Fraw%3Dtrue"
+                <a href="https://excalidraw.com/?addLibrary=https%3A%2F%2Fraw.githubusercontent.com%2Fexcalidraw%2Fexcalidraw-libraries%2Fjosejimenez-m-high-fidelity-auth-16-ui-ux-library-1762370438681%2Flibraries%2Fjosejimenez-m%2Fhigh-fidelity-auth-16-ui-ux-library.excalidrawlib%3Fraw%3Dtrue"
                     class="btn btn-primary">Add to Excalidraw</a>
-                <a href="https://github.com/josejimenez-m/17-prefabs-series-excalidraw" class="btn btn-secondary">View
+                <a href="https://github.com/JoseJimenez-M/High-Fidelity-Auth-16-UI-UX-Library" class="btn btn-secondary">View
                     Repository on GitHub</a>
             </div>
         </header>
 
-        <!-- CARDS EXAMPLES--->
+        <section class="preview-section">
+            <h2>Library Preview</h2>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <h3>Account Creation</h3>
+                    <div class="preview-image">
+                        <img src="img/1-Account Creation.png" alt="Account Creation Form" />
+                    </div>
+                </div>
 
-    <section class="preview-section">
-    <h2>Library Preview</h2>
-    <div class="preview-grid">
-        <div class="preview-card">
-            <h3>Login</h3>
-            <div class="preview-image">
-                <img src="img/1-LoginForm-min.png" alt="Login/Sign Up Form" />
+                <div class="preview-card">
+                    <h3>LegalTerms and Privacy</h3>
+                    <div class="preview-image">
+                        <img src="img/2-LegalTerms and Privacy.png" alt="Legal Terms and Privacy Screen" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Login</h3>
+                    <div class="preview-image">
+                        <img src="img/3-Login.png" alt="Login Form Screen" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Loading Screen</h3>
+                    <div class="preview-image">
+                        <img src="img/4-Loading Screen.png" alt="Loading Screen Illustration" />
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="preview-card">
-            <h3>Success notification</h3>
-            <div class="preview-image">
-<img src="img/2-SuccessNotification-min.png" alt="Success Toast (Green)" />            </div>
-        </div>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <h3>Forgot Password</h3>
+                    <div class="preview-image">
+                        <img src="img/5-Forgot Password.png" alt="Forgot Password Flow Step" />
+                    </div>
+                </div>
 
-        <div class="preview-card">
-            <h3>About Page</h3>
-            <div class="preview-image">
-<img src="img/1-AboutUsPage.png" alt="Mobile About Us Screen" />            </div>
-        </div>
+                <div class="preview-card">
+                    <h3>Email Entry</h3>
+                    <div class="preview-image">
+                        <img src="img/6-Email Entry.png" alt="Email Entry Dialog" />
+                    </div>
+                </div>
 
-        <div class="preview-card">
-            <h3>Warning notification</h3>
-            <div class="preview-image">
-<img src="img/4-WarningMessage.png" alt="Warning Toast (Yellow)" />            </div>
-        </div>
-    </div>
+                <div class="preview-card">
+                    <h3>Email Verification</h3>
+                    <div class="preview-image">
+                        <img src="img/7-Email Verification.png" alt="Email Verification Screen" />
+                    </div>
+                </div>
 
-    <div class="preview-grid">
-        <div class="preview-card">
-            <h3>Error notification</h3>
-            <div class="preview-image">
-<img src="img/3-ErrorMessage.png" alt="Error Toast (Red)" />            </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>ProgressBar</h3>
-            <div class="preview-image">
-<img src="img/6-LoadingBar.png" alt="Loading Bar Component" />  
+                <div class="preview-card">
+                    <h3>Reset Password</h3>
+                    <div class="preview-image">
+                        <img src="img/8-Reset Password.png" alt="Reset Password Form" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Changed Success</h3>
+                    <div class="preview-image">
+                        <img src="img/9-Changed Success.png" alt="Password Changed Success Notification" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Error General</h3>
+                    <div class="preview-image">
+                        <img src="img/10-Error General.png" alt="General Error Page (Oops)" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Contact Us</h3>
+                    <div class="preview-image">
+                        <img src="img/11-Contact Us.png" alt="Contact Us Form" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Email Sent</h3>
+                    <div class="preview-image">
+                        <img src="img/12-Email Sent.png" alt="Email Sent Confirmation" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Welcome Aboard</h3>
+                    <div class="preview-image">
+                        <img src="img/13-Welcome Aboard.png" alt="Welcome Aboard Onboarding Screen" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Account Details</h3>
+                    <div class="preview-image">
+                        <img src="img/14-Account Details.png" alt="Account Details Profile Screen" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Reset Email</h3>
+                    <div class="preview-image">
+                        <img src="img/15-Reset Email.png" alt="Reset Email Form" />
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <h3>Confirmation Dialog</h3>
+                    <div class="preview-image">
+                        <img src="img/16-Confirmation Dialog.png" alt="Confirmation Dialog Modal" />
+                    </div>
+                </div>
+
+        </section>
+
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick Integration</h3>
+                    <p>
+                        One-click installation directly into your Excalidraw workspace.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>High Fidelity</h3>
+                    <p>
+                        Detailed elements suitable for professional documentation and
+                        diagramming.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Thematic Series</h3>
+                    <p>
+                        All 16 components share a unified style for visual consistency in
+                        your diagrams.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Open Source</h3>
+                    <p>
+                        Completely free and open source. Feel free to contribute and use
+                        without restrictions.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Optimized Design</h3>
+                    <p>
+                        Designed to be easily editable and adaptable for any prototyping
+                        need.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Production Ready</h3>
+                    <p>
+                        Perfect for presentations, brainstorming sessions, and complex
+                        creative projects.
+                    </p>
+                </div>
             </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>Profile Page</h3>
-            <div class="preview-image">
-<img src="img/5-ProfilePage.png" alt="Mobile Profile Settings" />            </div>
-        </div>
+        </section>
 
-        <div class="preview-card">
-            <h3>Error 404 Page (Sleepy Icon)</h3>
-            <div class="preview-image">
-<img src="img/6-PageNotFound404.png" alt="Error 404 Modal" />            </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>Subscription Form</h3>
-            <div class="preview-image">
-<img src="img/4-Newsletter.png" alt="Subscription Form" />            </div>
-        </div>
-
-        <div class="preview-card">
-            <h3>Confirmation Page</h3>
-            <div class="preview-image">
-<img src="img/3-ThankYouPage.png" alt="Success Modal (Done)" />            </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>Contact Us</h3>
-            <div class="preview-image">
-<img src="img/2-ContactForm.png" alt="Contact Form Modal" />            </div>
-        </div>
-
-        <div class="preview-card">
-            <h3>New Feature Alert Modal</h3>
-            <div class="preview-image">
-<img src="img/7-NewUpdates.png" alt="New Feature Popup" />            </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>Multi-Select Task Input Card</h3>
-            <div class="preview-image">
-<img src="img/8-AssigmentTask.png" alt="Assignment Tasks (List)" />            </div>
-        </div>
-
-        <div class="preview-card">
-            <h3>Share Content Pop-up</h3>
-            <div class="preview-image">
-<img src="img/9-ShareContent.png" alt="Share Modal (Pop-up)" />            </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>Steps Counter Widget (Flame Icon)</h3>
-            <div class="preview-image">
-<img src="img/1-StepsCounter.png" alt="Steps Counter Metric" />
+        <section class="preview-section">
+            <h2>Library Stats</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Prefabs Included</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free & Open</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Possibilities of Use</div>
+                </div>
             </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>Heart Rate Monitor Widget</h3>
-            <div class="preview-image">
-<img src="img/2-RitmoCorazon.png" alt="Heart Rate BPM Counter" />
-            </div>
-        </div>
-        
-        <div class="preview-card">
-            <h3>3D Simple Carousel</h3>
-            <div class="preview-image">
-<img src="img/5-SimpleCarousel.png" alt="Simple Carousel Component" />            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Quick Integration</h3>
-                <p>
-                    One-click installation directly into your Excalidraw workspace.
+        <section class="preview-section">
+            <h2>Getting Started</h2>
+            <div class="preview-container">
+                <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.95">
+                    Click the **"Add 16 Prefabs to Excalidraw"** button above to
+                    instantly load the full collection into your workspace. The elements
+                    will appear in your library panel, ready to drag and drop.
                 </p>
             </div>
+        </section>
 
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>High Fidelity</h3>
-                <p>
-                    Detailed elements suitable for professional documentation and
-                    diagramming.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>Thematic Series</h3>
-                <p>
-                    All 17 components share a unified style for visual consistency in
-                    your diagrams.
-                </p>
+        <footer>
+            <div class="footer-links">
+                <a href="https://excalidraw.com">Excalidraw</a>
+                <a href="https://libraries.excalidraw.com">Other Libraries</a>
+                <a href="https://github.com/josejimenez-m/17-prefabs-series-excalidraw/issues">Report Issue</a>
             </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">📦</div>
-                <h3>Open Source</h3>
-                <p>
-                    Completely free and open source. Feel free to contribute and use
-                    without restrictions.
-                </p>
-            </div>
+            <a href="https://github.com/josejimenez-m/17-prefabs-series-excalidraw" class="github-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                View Source on GitHub
+            </a>
 
-            <div class="feature-card">
-                <div class="feature-icon">⚙️</div>
-                <h3>Optimized Design</h3>
-                <p>
-                    Designed to be easily editable and adaptable for any prototyping
-                    need.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Production Ready</h3>
-                <p>
-                    Perfect for presentations, brainstorming sessions, and complex
-                    creative projects.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="preview-section">
-        <h2>Library Stats</h2>
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">17</div>
-                <div class="stat-label">Prefabs Included</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Free & Open</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">∞</div>
-                <div class="stat-label">Possibilities of Use</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="preview-section">
-        <h2>Getting Started</h2>
-        <div class="preview-container">
-            <p style="font-size: 1.2rem; line-height: 1.8; opacity: 0.95">
-                Click the **"Add 17 Prefabs to Excalidraw"** button above to
-                instantly load the full collection into your workspace. The elements
-                will appear in your library panel, ready to drag and drop.
+            <p style="margin-top: 20px; opacity: 0.7">
+                Built with ❤️ for the Excalidraw community
             </p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-links">
-            <a href="https://excalidraw.com">Excalidraw</a>
-            <a href="https://libraries.excalidraw.com">Other Libraries</a>
-            <a href="https://github.com/josejimenez-m/17-prefabs-series-excalidraw/issues">Report Issue</a>
-        </div>
-
-        <a href="https://github.com/josejimenez-m/17-prefabs-series-excalidraw" class="github-link">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-            View Source on GitHub
-        </a>
-
-        <p style="margin-top: 20px; opacity: 0.7">
-            Built with ❤️ for the Excalidraw community
-        </p>
-    </footer>
+        </footer>
     </div>
 </body>
 
